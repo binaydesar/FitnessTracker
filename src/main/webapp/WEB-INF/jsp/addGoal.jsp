@@ -6,17 +6,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add Goal</title>
+<style>
+	.error{color: red;}
+	.error-block{
+		color: #000;
+		background-color: gray;
+		paddin: 5px;
+		border: 3px solid red;
+		margin: 3px;}
+</style>
 </head>
 <body>
 
 <form:form commandName ="goal">
+	<form:errors path="*" element ="div" cssClass="error-block" />
 	<table>
 		<tr>
 			<td>Enter Minutes: </td>
 			<td><form:input path="minutes" /></td>
+			<td ><form:errors path ="minutes" cssclass="error" /></td>
 		</tr>
+		
 		<tr>
-			<td colspan="2"><input type="submit" value = "Enter Goal Minutes"/></td>
+			<td>Enter Name: </td>
+			<td><form:input path="name" /></td>
+			<td ><form:errors path ="name" cssclass="error" /></td>
+		</tr>
+		
+		<tr>
+			<td colspan="3"><input type="submit" value = "Enter Goal Minutes"/></td>
 		</tr>
 	</table>
 </form:form>
